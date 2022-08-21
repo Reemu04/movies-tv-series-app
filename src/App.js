@@ -10,6 +10,9 @@ import Trending from "./pages/Trending/Trending";
 const theme = createTheme({
   palette: {
     mode: "dark",
+    // primary: {
+    //   main: "#fff",
+    // },
   },
 });
 function App() {
