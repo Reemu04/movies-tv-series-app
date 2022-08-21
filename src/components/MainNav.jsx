@@ -1,12 +1,21 @@
-import { BottomNavigation, BottomNavigationAction, Box } from "@mui/material";
-import React from "react";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
+import React, { useEffect } from "react";
 import { Movie, Search, Tv, Whatshot } from "@mui/icons-material";
-
+import { useNavigate } from "react-router-dom";
 const MainNav = () => {
   const [value, setValue] = React.useState(0);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (value === 0) {
+      navigate("/");
+    } else if (value === 1) {
+      navigate("/movies");
+    } else if (value === 2) {
+      navigate("/series");
+    } else {
+      navigate("/search");
+    }
+  }, [value, navigate]);
   return (
     <BottomNavigation
       sx={{
