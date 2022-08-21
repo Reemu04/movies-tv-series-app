@@ -36,29 +36,29 @@ const MainNav = () => {
       <BottomNavigationAction
         style={{
           color: value !== 0 ? "white" : "",
-          // background: value === 0 ? "white" : "black",
-          // background:
-          // "linear-gradient(90deg,rgb(13,37,63),rgb(1,180,228),rgb(144,206,161),rgb(13,37,63))",
-          // color:
-          // "linear-gradient(90deg,rgb(13,37,63),rgb(1,180,228),rgb(144,206,161),rgb(13,37,63))",
-          // borderRadius: "10px",
         }}
         label="Trending"
         icon={<Whatshot />}
       />
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={{
+          color: value !== 1 ? "white" : "",
+        }}
         label="Movies"
         icon={<Movie />}
       />
 
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={{
+          color: value !== 2 ? "white" : "",
+        }}
         label="Tv Series"
         icon={<Tv />}
       />
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={{
+          color: value !== 3 ? "white" : "",
+        }}
         label="Search"
         icon={<Search />}
       />

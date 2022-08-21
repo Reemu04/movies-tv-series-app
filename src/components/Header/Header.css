@@ -1,9 +1,7 @@
 .header {
-  /* background-color: #39445a; */
   background-color: rgba(18, 18, 18, 0.95);
-
   color: white;
-  font-size: 4vw;
+  font-size: 3.9vw;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -13,12 +11,10 @@
   width: 100%;
   cursor: pointer;
   position: fixed;
-  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8); */
-  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8); */
   z-index: 100;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 950px) {
   .header {
     font-size: 6.6vw;
   }

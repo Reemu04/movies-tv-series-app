@@ -1,22 +1,23 @@
+* {
+  scroll-behavior: smooth;
+}
+/* ---------Main APP ----------- */
 .app {
   min-height: 100vh;
   padding-top: 130px;
   padding-bottom: 70px;
-  /* background-color: #39445a; */
   background-color: rgba(18, 18, 18, 1);
-  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8); */
-
-  /* background-color: rgba(18, 18, 18, 0.95); */
   color: white;
 }
-/* #89a4db */
-/*  #bad1ff*/
 
 @media (max-width: 700px) {
   .app {
     padding-top: 70px;
   }
 }
+
+/* ---------Page Title for all screens  ----------- */
+
 .pageTitle {
   text-transform: uppercase;
   display: flex;
