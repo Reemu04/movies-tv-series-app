@@ -1,0 +1,10 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* .pagination .MuiPaginationItem-root {
+  color: white;
+} */
