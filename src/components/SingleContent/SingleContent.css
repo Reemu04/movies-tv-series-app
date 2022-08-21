@@ -1,0 +1,46 @@
+.media {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  background-color: #282c34;
+  padding: 5px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 1px;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); */
+}
+
+.media:hover {
+  background-color: white;
+  color: black;
+  transition: all ease-in-out 0.2s;
+  transform: scale(1.1);
+}
+
+@media (max-width: 550px) {
+  .media {
+    width: 46%;
+  }
+  .media:hover {
+    transition: all ease-in-out 0.2s;
+    transform: scale(1.1);
+  }
+}
+.poster {
+  border-radius: 10px;
+}
+
+.main-title {
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  padding: 8px 0;
+}
+
+.subTitle {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3px;
+  padding: 0 2px;
+}
