@@ -1,3 +1,4 @@
+import { Snackbar, SnackbarContent } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Genres from "../../components/Genres";
@@ -38,6 +39,11 @@ const Movies = () => {
       />
 
       <div className="trending">
+        {content.length === 0 && (
+          <span className="message">
+            <SnackbarContent message={"No Data Found !!"} />
+          </span>
+        )}
         {content &&
           content.map((c) => (
             <SingleCOntent

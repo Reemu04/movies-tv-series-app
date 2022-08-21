@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+.trending .message {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+}
