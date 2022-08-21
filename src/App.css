@@ -2,7 +2,10 @@
   min-height: 100vh;
   padding-top: 130px;
   padding-bottom: 70px;
-  background-color: #39445a;
+  /* background-color: #39445a; */
+  background-color: rgba(18, 18, 18, 1);
+  /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.8); */
+
   /* background-color: rgba(18, 18, 18, 0.95); */
   color: white;
 }

@@ -19,7 +19,7 @@ const MainNav = () => {
   return (
     <BottomNavigation
       sx={{
-        backgroundColor: "#2d313a",
+        backgroundColor: "rgba(18, 18, 18, 1)",
         width: "100%",
         position: "fixed",
         bottom: 0,
@@ -34,7 +34,11 @@ const MainNav = () => {
       }}
     >
       <BottomNavigationAction
-        style={{ color: "white" }}
+        style={{
+          background: value === 0 ? "white" : "black",
+          color: value === 0 ? "black" : "white",
+          borderRadius: "10px",
+        }}
         label="Trending"
         icon={<Whatshot />}
       />
