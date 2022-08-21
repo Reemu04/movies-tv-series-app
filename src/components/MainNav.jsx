@@ -35,9 +35,12 @@ const MainNav = () => {
     >
       <BottomNavigationAction
         style={{
-          color: "white",
+          color: value !== 0 ? "white" : "",
           // background: value === 0 ? "white" : "black",
-          // color: value === 0 ? "black" : "white",
+          // background:
+          // "linear-gradient(90deg,rgb(13,37,63),rgb(1,180,228),rgb(144,206,161),rgb(13,37,63))",
+          // color:
+          // "linear-gradient(90deg,rgb(13,37,63),rgb(1,180,228),rgb(144,206,161),rgb(13,37,63))",
           // borderRadius: "10px",
         }}
         label="Trending"
