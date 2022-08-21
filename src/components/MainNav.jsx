@@ -35,9 +35,10 @@ const MainNav = () => {
     >
       <BottomNavigationAction
         style={{
-          background: value === 0 ? "white" : "black",
-          color: value === 0 ? "black" : "white",
-          borderRadius: "10px",
+          color: "white",
+          // background: value === 0 ? "white" : "black",
+          // color: value === 0 ? "black" : "white",
+          // borderRadius: "10px",
         }}
         label="Trending"
         icon={<Whatshot />}
