@@ -74,7 +74,7 @@ const DetailContent = () => {
                 <div className="chip_main">
                   {content.genres.map((g) => (
                     <Chip
-                      sx={{ marginRight: "25px" }}
+                      sx={{ marginRight: "15px", marginBottom: "5px" }}
                       label={g.name}
                       variant="outlined"
                     />
