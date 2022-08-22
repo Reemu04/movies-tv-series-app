@@ -72,9 +72,10 @@ const DetailContent = () => {
                   )
                 </h1>
                 <div className="chip_main">
-                  {content.genres.map((g) => (
+                  {content.genres.map((g, i) => (
                     <Chip
-                      sx={{ marginRight: "15px", marginBottom: "5px" }}
+                      key={i}
+                      sx={{ marginRight: "15px", marginBottom: "12px" }}
                       label={g.name}
                       variant="outlined"
                     />
