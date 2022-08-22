@@ -55,7 +55,8 @@ const Search = () => {
         </Button> */}
       </div>
       <Tabs
-        sx={{ display: "flex", justifyContent: "center" }}
+        centered={true}
+        scrollButtons={false}
         value={type}
         indicatorColor="primary"
         textColor="primary"
@@ -64,8 +65,8 @@ const Search = () => {
           setPage(1);
         }}
       >
-        <Tab style={{ width: "50rem" }} label="Search Movies" />
-        <Tab style={{ width: "50rem" }} label="Search TV Series" />
+        <Tab style={{ width: "50%" }} label="Search Movies" />
+        <Tab style={{ width: "50%" }} label="Search TV Series" />
       </Tabs>
       <div className="trending">
         {console.log("hi", content)}
