@@ -2,6 +2,7 @@ import { SnackbarContent } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Genres from "../../components/Genres";
+import Loader from "../../components/Loader";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 import SingleCOntent from "../../components/SingleContent/SingleCOntent";
 import useGenres from "../../Hooks/useGenre";
@@ -12,6 +13,7 @@ const Series = () => {
   const [noOfPages, setNoOfPages] = useState();
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const genreforUrl = useGenres(selectedGenres);
 
   const fetchMovies = async () => {
@@ -20,6 +22,7 @@ const Series = () => {
     );
     setContent(data.results);
     setNoOfPages(data.total_pages);
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -28,41 +31,47 @@ const Series = () => {
   }, [page, genreforUrl]);
 
   return (
-    <div>
-      <span className="pageTitle">TV Series</span>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div>
+          <span className="pageTitle">TV Series</span>
 
-      <Genres
-        type="tv"
-        selectedGenres={selectedGenres}
-        setSelectedGenres={setSelectedGenres}
-        genres={genres}
-        setGenres={setGenres}
-        setPage={setPage}
-      />
+          <Genres
+            type="tv"
+            selectedGenres={selectedGenres}
+            setSelectedGenres={setSelectedGenres}
+            genres={genres}
+            setGenres={setGenres}
+            setPage={setPage}
+          />
 
-      <div className="trending">
-        {content.length === 0 && (
-          <span className="message">
-            <SnackbarContent message={"No Data Found !!"} />
-          </span>
-        )}
-        {content &&
-          content.map((c) => (
-            <SingleCOntent
-              key={c.id}
-              id={c.id}
-              poster={c.poster_path}
-              title={c.title || c.name}
-              date={c.first_air_date || c.release_date}
-              mediaType="tv"
-              voteAvg={c.vote_average}
-            />
-          ))}
-      </div>
-      {noOfPages > 1 && (
-        <CustomPagination setPage={setPage} noOfPages={noOfPages} />
+          <div className="trending">
+            {content.length === 0 && (
+              <span className="message">
+                <SnackbarContent message={"No Data Found !!"} />
+              </span>
+            )}
+            {content &&
+              content.map((c) => (
+                <SingleCOntent
+                  key={c.id}
+                  id={c.id}
+                  poster={c.poster_path}
+                  title={c.title || c.name}
+                  date={c.first_air_date || c.release_date}
+                  mediaType="tv"
+                  voteAvg={c.vote_average}
+                />
+              ))}
+          </div>
+          {noOfPages > 1 && (
+            <CustomPagination setPage={setPage} noOfPages={noOfPages} />
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
