@@ -1,21 +1,9 @@
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { Movie, Search, Tv, Whatshot } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const MainNav = () => {
   const [value, setValue] = React.useState(0);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (value === 0) {
-      navigate("/");
-    } else if (value === 1) {
-      navigate("/movies");
-    } else if (value === 2) {
-      navigate("/series");
-    } else {
-      navigate("/search");
-    }
-  }, [value, navigate]);
   return (
     <BottomNavigation
       sx={{
@@ -34,6 +22,8 @@ const MainNav = () => {
       }}
     >
       <BottomNavigationAction
+        LinkComponent={Link}
+        to="/"
         style={{
           color: value !== 0 ? "white" : "",
         }}
@@ -41,6 +31,8 @@ const MainNav = () => {
         icon={<Whatshot />}
       />
       <BottomNavigationAction
+        LinkComponent={Link}
+        to="/movies"
         style={{
           color: value !== 1 ? "white" : "",
         }}
@@ -49,6 +41,8 @@ const MainNav = () => {
       />
 
       <BottomNavigationAction
+        LinkComponent={Link}
+        to="/series"
         style={{
           color: value !== 2 ? "white" : "",
         }}
@@ -56,6 +50,8 @@ const MainNav = () => {
         icon={<Tv />}
       />
       <BottomNavigationAction
+        LinkComponent={Link}
+        to="/search"
         style={{
           color: value !== 3 ? "white" : "",
         }}

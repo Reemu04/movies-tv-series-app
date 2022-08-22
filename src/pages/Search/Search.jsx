@@ -16,14 +16,12 @@ const Search = () => {
         process.env.REACT_APP_API_KEY
       }&language=en-US&query=${searchText}&page=${page}&include_adult=false`
     );
-    console.log(data);
     setContent(data.results);
     setNoOfPages(data.total_pages);
   };
 
   const onChangeSearch = (e) => {
     setSearchText(e.target.value);
-    console.log("hi", e.target.value.trim().length);
     if (e.target.value.trim().length === 0) {
       fetchSearch();
     }
@@ -69,7 +67,6 @@ const Search = () => {
         <Tab style={{ width: "50%" }} label="Search TV Series" />
       </Tabs>
       <div className="trending">
-        {console.log("hi", content)}
         {searchText.length > 0 &&
           content &&
           content.map((c) => (

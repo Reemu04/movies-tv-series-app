@@ -1,6 +1,7 @@
 import { Container, createTheme, ThemeProvider } from "@mui/material";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import DetailContent from "./components/DetailContent/DetailContent";
 import Header from "./components/Header/Header";
 import MainNav from "./components/MainNav";
 import Movies from "./pages/Movies/Movies";
@@ -27,6 +28,7 @@ function App() {
               <Route exact path="/movies" element={<Movies />} />
               <Route exact path="/series" element={<Series />} />
               <Route exact path="/search" element={<Search />} />
+              <Route exact path="/detailcontent" element={<DetailContent />} />
             </Routes>
           </Container>
         </div>
